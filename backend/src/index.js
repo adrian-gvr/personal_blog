@@ -87,6 +87,12 @@ app.post("/api/login", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send(
+    "Benvenuto al backend del portfolio creativo! Visita /api/posts per vedere i post.",
+  );
+});
+
 app.get("/api/settings", (req, res) => {
   const db = getDB();
   res.json(db.settings);
