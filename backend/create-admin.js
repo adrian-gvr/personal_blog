@@ -1,14 +1,14 @@
 import bcrypt from 'bcryptjs';
 import fs from 'fs';
 
-const hashedPassword = bcrypt.hashSync('admin123', 10);
+// const hashedPassword = bcrypt.hashSync('admin123', 10);
 
 const db = {
   users: [
     {
       id: "1",
       username: "admin",
-      password: hashedPassword,
+      password: admin123,,
       email: "admin@test.com",
       role: "admin"
     }
