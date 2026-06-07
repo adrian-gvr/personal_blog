@@ -990,14 +990,33 @@ function Contacts() {
   );
 }
 
+// function Login({ setToken }) {
+//   const [username, setUsername] = useState("");
+//   const [password, setPassword] = useState("");
+//   const navigate = useNavigate();
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await axios.post("/api/login", { username, password });
+//       localStorage.setItem("token", res.data.token);
+//       setToken(res.data.token);
+//       navigate("/dashboard");
+//     } catch {
+//       alert("Credenziali errate");
+//     }
+//   };
 function Login({ setToken }) {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/login", { username, password });
+      const res = await axios.post(
+        "https://personal_blog.onrender.com/api/login",
+        { email, password }
+      );
       localStorage.setItem("token", res.data.token);
       setToken(res.data.token);
       navigate("/dashboard");
@@ -1005,6 +1024,8 @@ function Login({ setToken }) {
       alert("Credenziali errate");
     }
   };
+}
+
   return (
     <div
       style={{
